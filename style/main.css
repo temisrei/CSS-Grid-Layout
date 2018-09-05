@@ -4,21 +4,23 @@
 
 main {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 100px);
-  grid-gap: 20px;
+  width: 40em;
+  height: 20em;
+  border: 5px solid hsla(120, 50%, 50%, 1);
+  grid-template-columns: repeat(4, 4em);
+  grid-template-rows: repeat(3, 4em);
+  grid-gap: 10px;
   grid-auto-flow: row;
-  grid-template-areas:
-    "brand brand brand support"
-    "..... main  main  support"
-    "..... main  main  etc";
+  justify-content: center;
+  /* start | center | end */
+  align-content: center;
 }
 
 main div {
   border: 5px solid hsla(187, 70%, 30%, 1);
   border-radius: 30px;
   background-color: hsla(187, 90%, 30%, 0.6);
-  padding: 1.5em;
+  padding: 1em;
   color: white;
   font-family: sans-serif;
   font-size: 120%;
@@ -28,25 +30,4 @@ main div {
 main div:nth-child(odd) {
   background-color: hsla(50, 90%, 30%, 0.8);
   border-radius: 3px;
-}
-
-main div:nth-child(1) {
-  grid-area: brand;
-}
-
-main div:nth-child(2) {
-  grid-area: main;
-}
-
-main div:nth-child(3) {
-  grid-area: support;
-}
-
-main div:nth-child(4) {
-  grid-area: etc;
-}
-
-main div:nth-child(6) {
-  grid-column: brand-start / etc-end;
-  grid-row: main-start / support-end;
 }
