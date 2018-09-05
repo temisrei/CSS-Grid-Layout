@@ -4,16 +4,15 @@
 
 main {
   display: grid;
-  width: 40em;
-  height: 20em;
+  max-width: 850px;
   border: 5px solid hsla(120, 50%, 50%, 1);
-  grid-template-columns: repeat(4, 4em);
+  grid-template-columns: 160px repeat(auto-fill, 100px) 60px;
+  /* try auto-fit */
+  /* AND try this: */
+  /* grid-template-columns: 160px repeat(auto-fill, minmax(100px, 1fr)) 60px; */
   grid-template-rows: repeat(3, 4em);
   grid-gap: 10px;
   grid-auto-flow: row;
-  justify-content: center;
-  /* start | center | end */
-  align-content: center;
 }
 
 main div {
@@ -30,4 +29,8 @@ main div {
 main div:nth-child(odd) {
   background-color: hsla(50, 90%, 30%, 0.8);
   border-radius: 3px;
+}
+
+main div:nth-child(4) {
+  grid-column: -3 / -1;
 }
