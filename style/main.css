@@ -8,6 +8,10 @@ main {
   grid-template-rows: repeat(3, 100px);
   grid-gap: 20px;
   grid-auto-flow: row;
+  grid-template-areas:
+    "brand brand brand support"
+    "..... main  main  support"
+    "..... main  main  etc";
 }
 
 main div {
@@ -26,28 +30,18 @@ main div:nth-child(odd) {
   border-radius: 3px;
 }
 
-
-main div:nth-child(7) {
-  grid-column: 1;
-  grid-row: 1;
+main div:nth-child(1) {
+  grid-area: brand;
 }
-
-
-main div:nth-child(10) { /* 會跟 7th div 重疊 */
-  grid-column: 1;
-  grid-row: 1;
-}
-
 
 main div:nth-child(2) {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-column: 2 / 5; /* 第 2 條到第 5 條 */
-  grid-row: 1 / 3; /* 第 1 條到第 3 條 */
+  grid-area: main;
 }
 
+main div:nth-child(3) {
+  grid-area: support;
+}
 
-main div:nth-child(6) {
-  grid-column: 1 / -2; /* 第 1 條到 倒數第 2 條: 5-2+1=4 */
-  grid-row: 2 / span 3; /* span 3 代表延伸 3 條線: 2 ~ 2+3=5 */
+main div:nth-child(4) {
+  grid-area: etc;
 }
