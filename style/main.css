@@ -6,8 +6,9 @@ main {
   display: grid;
   max-width: 850px;
   border: 5px solid hsla(120, 50%, 50%, 1);
-  grid-template-columns: 160px minmax(300px, 2fr) 1fr 60px;
-  grid-template-rows: repeat(3, 4em);
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-template-columns: 1fr min-content 1fr; */
+  grid-template-columns: 1fr max-content 1fr;
   grid-gap: 10px;
   grid-auto-flow: row;
 }
