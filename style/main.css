@@ -4,5 +4,11 @@ body {
 
 main {
   display: grid;
+
+  grid-template-columns: 200px 100px 200px 150px; /* 4 欄 */
+  grid-template-rows: 150px 100px 100px; /* 3 列 */
+  grid-column-gap: 10px; 
+  grid-row-gap: 5px;
+
   background-color: hsla(190, 40%, 80%, 1);
 }
