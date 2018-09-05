@@ -45,3 +45,8 @@ main div:nth-child(3) {
 main div:nth-child(4) {
   grid-area: etc;
 }
+
+main div:nth-child(6) {
+  grid-column: brand-start / etc-end;
+  grid-row: main-start / support-end;
+}
